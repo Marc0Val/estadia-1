@@ -1,16 +1,16 @@
-// crea pagina not found
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaExclamationTriangle } from "react-icons/fa";
+import { Button } from "reactstrap";
 
 const NotFoundPage = () => {
   return (
-    <div className="notfound">
-      <div className="notfound-container">
-        <FaExclamationTriangle />
-        <h1>404 - Not Found!</h1>
-        <p>La página que buscas no existe.</p>
-        <Link to="/">Volver al inicio</Link>
+    <div className="notfoundpage">
+      <div className="notfound-container animated-drop">
+        <h1>404</h1>
+        <p>Página no encontrada</p>
+        <Link to="/">
+          <Button color="info">Volver al inicio</Button>
+        </Link>
       </div>
     </div>
   );

@@ -1,18 +1,29 @@
+// App.js
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
+import Login from "./Components/Login";
+import DashboardLayout from "./Components/DashboardLayout";
+import Dashboard from "./Components/Dashboard";
 import "./App.scss";
-import NotFoundPage from "./pages/NotFoundPage";
-import Admin from "./Admin";
+import NotFoundPage from "./Pages/NotFoundPage";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Router>
+    // <div className="content">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route
+            path="/dashboard"
+            element={
+              <DashboardLayout>
+                <Dashboard />
+              </DashboardLayout>
+            }
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Router>
+    // </div>
   );
 }
 

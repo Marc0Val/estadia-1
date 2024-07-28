@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { FaSignOutAlt } from "react-icons/fa";
 
 const Navbar = () => {
-  // funcion demostrativa para cerrar sesion
+  // función demostrativa para cerrar sesión
   const cerrarSesion = () => {
     Swal.fire({
       title: "¿Estás seguro?",
@@ -16,7 +16,6 @@ const Navbar = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Sesión cerrada", "", "success");
-
         window.location.href = "/";
       }
     });
@@ -25,7 +24,6 @@ const Navbar = () => {
   return (
     <nav className="navbar fixed-top">
       <div className="container-fluid">
-        {/* div para el logo */}
         <div className="navbar-brand">
           <img
             src="https://turismo.durango.gob.mx/wp-content/uploads/sites/35/2022/11/SETUED.svg"
@@ -37,14 +35,14 @@ const Navbar = () => {
         <div className="navbar-title">
           <h1>Registro Estatal De Calidad Turistica</h1>
         </div>
-        <ul className=" nav jsutify-content-end">
+        <ul className="nav justify-content-end">
           <li className="nav-item">
             <button
               className="btn btn-secondary"
               onClick={() => cerrarSesion()}
             >
               <FaSignOutAlt />
-              Cerrar sesión
+              Salir
             </button>
           </li>
         </ul>
