@@ -3,3 +3,5 @@ Para ejecutar, Primero instala las dependencias con:
 
 Luego, para iniciar, ejecuta:
     npm start
+
+Navegar, agregaras en la url "/dashboard"
