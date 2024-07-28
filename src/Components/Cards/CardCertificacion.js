@@ -1,3 +1,4 @@
+// Importamos las bibliotecas necesarias de React y Reactstrap.
 import React from "react";
 import {
   Card,
@@ -11,11 +12,14 @@ import {
   Button,
 } from "reactstrap";
 
+// Definimos una imagen por defecto para las certificaciones.
 const defaultImage =
   "https://img.freepik.com/vector-gratis/ilustracion-concepto-certificacion_114360-5171.jpg?w=1060&t=st=1719986206~exp=1719986806~hmac=01f9788cee047afa4a7f905b00526dc503449a27832ec0a6c6c223a2abfa5534";
 
+// Componente para mostrar la tarjeta de una certificación.
 const CardCertificacion = ({ cert, toggleModal }) => {
   return (
+    // Tarjeta que muestra el nombre y la fecha de la certificación.
     <Card className="cert-card" onClick={() => toggleModal(cert)}>
       <CardBody>
         <img src={defaultImage} alt={cert.name} className="cert-image" />
@@ -28,8 +32,10 @@ const CardCertificacion = ({ cert, toggleModal }) => {
   );
 };
 
+// Componente para mostrar el modal con los detalles de una certificación.
 const CertificationModal = ({ certification, toggleModal }) => {
   return (
+    // Modal que muestra información detallada de la certificación.
     <Modal isOpen={true} toggle={() => toggleModal(null)}>
       <ModalHeader toggle={() => toggleModal(null)}>
         {certification.name}
@@ -69,4 +75,5 @@ const CertificationModal = ({ certification, toggleModal }) => {
   );
 };
 
+// Exportamos los componentes CardCertificacion y CertificationModal.
 export { CardCertificacion, CertificationModal };

@@ -1,11 +1,15 @@
 // AddCertificationForm.js
+
+// Importamos las bibliotecas necesarias de React, Reactstrap, DatePicker y Swal.
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 
+// Definimos el componente AddCertificationForm.
 const AddCertificationForm = () => {
+  // Estado inicial del formulario.
   const initialFormState = {
     name: "",
     topic: "",
@@ -17,8 +21,10 @@ const AddCertificationForm = () => {
     budget: "",
   };
 
+  // Estado para la certificación.
   const [certification, setCertification] = useState(initialFormState);
 
+  // Lista de departamentos.
   const departments = [
     "Recursos Humanos",
     "Proyectos",
@@ -27,15 +33,18 @@ const AddCertificationForm = () => {
     "Dirección",
   ];
 
+  // Función para manejar los cambios en los campos del formulario.
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCertification({ ...certification, [name]: value });
   };
 
+  // Función para manejar los cambios en las fechas.
   const handleDateChange = (name, date) => {
     setCertification({ ...certification, [name]: date });
   };
 
+  // Función para manejar el envío del formulario.
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(certification);
@@ -46,11 +55,13 @@ const AddCertificationForm = () => {
     });
   };
 
+  // Función para resetear el formulario.
   const handleReset = () => {
     setCertification(initialFormState);
   };
 
   return (
+    // Formulario de adición de certificación.
     <Form onSubmit={handleSubmit}>
       <FormGroup>
         <Label for="name">Nombre o Título de la Certificación</Label>
@@ -153,4 +164,5 @@ const AddCertificationForm = () => {
   );
 };
 
+// Exportamos el componente AddCertificationForm como predeterminado.
 export default AddCertificationForm;

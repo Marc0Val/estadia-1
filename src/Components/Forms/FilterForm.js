@@ -1,16 +1,20 @@
 // FilterForm.js
+
+// Importamos las bibliotecas necesarias de React, Reactstrap y DatePicker.
 import React from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+// Definimos el componente FilterForm.
 const FilterForm = ({
-  filters,
-  handleFilterChange,
-  handleDateChange,
-  handleFilter,
+  filters, // Objeto que contiene los filtros actuales.
+  handleFilterChange, // Función para manejar los cambios en los filtros.
+  handleDateChange, // Función para manejar los cambios en las fechas.
+  handleFilter, // Función para aplicar los filtros.
 }) => {
   return (
+    // Formulario de filtrado.
     <Form className="filter-form">
       <FormGroup>
         <Label for="name">Nombre</Label>
@@ -101,4 +105,5 @@ const FilterForm = ({
   );
 };
 
+// Exportamos el componente FilterForm como predeterminado.
 export default FilterForm;
